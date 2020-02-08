@@ -8,6 +8,8 @@ class BoardModel(models.Model):
     content = models.TextField()
     author = models.CharField(max_length=100)
     images = models.ImageField(upload_to='')
+    created_date = models.DateTimeField(default=timezone.now)
+    published_date = models.DateTimeField(blank=True, null=True)
 
     good = models.IntegerField(null=True, blank=True, default=0)
     readtext = models.CharField(max_length=100, null=True, blank=True, default='a')

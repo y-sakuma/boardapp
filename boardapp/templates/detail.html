@@ -1,0 +1,19 @@
+{% extends 'base2.html' %}
+{% load static %}
+
+{% block page_css %}
+<link rel="stylesheet" type="text/css" href="{% static 'css/index.css' %}">
+{% endblock page_css %}
+
+{% block content %}
+<div class="container">
+    <div class="alert alert-success" role="alert">
+        <p>タイトル：{{ object.title }}</p>
+        <p>投稿者：{{ object.author }}</p>
+        <p>内容：{{ object.content }}</p>
+        <p><img src="{{ object.images.url }}" width=300></p>
+        <a href="#" class="btn btn-primary" role="button" aria-pressed="true">
+            いいね:{{ object.good }}</a>{{object.readtext}}
+    </div>
+</div>
+{% endblock content %}

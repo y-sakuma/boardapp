@@ -1,10 +1,16 @@
 from django.urls import path, include
 
-from .views import signupfunc, loginfunc, indexfunc
+from .views import topfunc, signupfunc, loginfunc, logoutfunc, indexfunc, detailfunc, goodfunc
+from .views import BoardCreate
+
 
 urlpatterns = [
+    path('', topfunc, name='top'),
     path('signup/', signupfunc, name='signup'),
-    path('', loginfunc, name='login'),
+    path('login/', loginfunc, name='login'),
+    path('logout/', logoutfunc, name='logout'),
     path('index/', indexfunc, name='index'),
-    path
+    path('detail/<int:pk>/', detailfunc, name='detail'),
+    path('good/<int:pk>/', goodfunc, name='good'),
+    path('create/', BoardCreate.as_view(), name='create'),
 ]

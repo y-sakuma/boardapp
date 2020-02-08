@@ -2,13 +2,13 @@
 {% load static %}
 
 {% block page_css %}
-<link rel="stylesheet" type="text/css" href="{% static 'boardapp/sign.css' %}">
+<link rel="stylesheet" type="text/css" href="{% static 'css/sign.css' %}">
 {% endblock page_css %}
 
 {% block content %}
 <form class="form-signin" method="POST" action="">{% csrf_token %}
     <img class="mb-4" src="/docs/4.4/assets/brand/bootstrap-solid.svg" alt="" width="72" height="72">
-    <h1 class="h3 mb-3 font-weight-normal">Please sign up</h1>
+    <h1 class="h3 mb-3 font-weight-normal text-center">Please sign up</h1>
     {% if error %}
     {{ error }}
     {% endif %}
